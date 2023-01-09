@@ -22,6 +22,7 @@ $ python numguess.py
 - Create random answer number(1-100)
 - Compare answer with user's guess
 - Print user's guess
+- Print answer number
 
 
 ## References
