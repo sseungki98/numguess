@@ -15,4 +15,9 @@ user_guess = input("What is your guess? > ")
 # Print user's guess
 print(f"Your guess is {user_guess}, right?")
 
+# Compare user's guess with answer
+if user_guess == answer:
+    print("Wow, Correct!")
+else:
+    print("Sorry, You are wrong...")
 
