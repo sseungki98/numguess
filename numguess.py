@@ -15,6 +15,9 @@ user_guess = input("What is your guess? > ")
 # Print user's guess
 print(f"Your guess is {user_guess}, right?")
 
+# Print answer number
+print(f"Answer is {answer} !")
+
 # Compare user's guess with answer
 if user_guess == answer:
     print("Wow, Correct!")
