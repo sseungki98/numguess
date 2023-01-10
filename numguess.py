@@ -9,9 +9,10 @@ print(f"Welcome, {username}!")
 
 # Generate random answer
 answer = randint(1,100)
+print(answer)
 
 # Get user's guess
-user_guess = input("What is your guess? > ")
+user_guess = int(input("What is your guess? > "))
 
 # Print user's guess
 print(f"Your guess is {user_guess}, right?")
