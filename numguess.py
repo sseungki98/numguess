@@ -29,6 +29,8 @@ if user_guess == answer:
     print('*****************************')
     sleep(1)
     print("Wow, Correct!")
+elif user_guess > answer:
+    print("Sorry, You are wrong... answer is lower than your guess.")
 else:
-    print("Sorry, You are wrong...")
+    print("Sorry, you are wrong... answer is higher than your guess.")
 
