@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 
 # Get user's name
 username = input("What is your name? > ")
@@ -20,6 +21,12 @@ print(f"Answer is {answer} !")
 
 # Compare user's guess with answer
 if user_guess == answer:
+    print('*****************************')
+    sleep(1)
+    print('*****************************')
+    sleep(1)
+    print('*****************************')
+    sleep(1)
     print("Wow, Correct!")
 else:
     print("Sorry, You are wrong...")
