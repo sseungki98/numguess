@@ -36,5 +36,10 @@ def play_game():
         if status:
             break
     print(f"Answer is {answer}!")
+    choice = input("Do you want to play this game again?(Y/N) ( want to play, Press Y. want to quit, Press N) > ")
+    if choice == 'Y':
+        return play_game()
+    else:
+        return
 
 play_game()
