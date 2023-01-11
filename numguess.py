@@ -27,7 +27,8 @@ def check_answer(answer, user_guess):
         print("Sorry, you are wrong... answer is higher than your guess.")
         return False
 
-def play_game():
+def play_game(total_score, try_count):
+    score = 100
     username = get_username()
     answer = randint(1,100)
     while(True):
@@ -35,11 +36,18 @@ def play_game():
         status = check_answer(answer,user_guess)
         if status:
             break
+        score -= 5
     print(f"Answer is {answer}!")
+    print(f"You Got {score} points!!")
+    total_score += score
+    print(f"Your Try count is {try_count}, and Total score is {total_score} points")
     choice = input("Do you want to play this game again?(Y/N) ( want to play, Press Y. want to quit, Press N) > ")
     if choice == 'Y':
-        return play_game()
+        try_count += 1
+        return play_game(total_score, try_count)
     else:
         return
 
-play_game()
+total_score = 0
+try_count = 1
+play_game(total_score, try_count)
