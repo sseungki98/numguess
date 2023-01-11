@@ -19,17 +19,22 @@ def check_answer(answer, user_guess):
         print('******************************')
         print('Congratulation !! Correct !!')
         print('******************************')
-        return
+        return True
     elif user_guess > answer:
         print("Sorry, you are wrong... answer is lower than your guess.")
+        return False
     else:
         print("Sorry, you are wrong... answer is higher than your guess.")
+        return False
 
 def play_game():
     username = get_username()
     answer = randint(1,100)
-    user_guess = get_userguess()
-    check_answer(answer,user_guess)
+    while(True):
+        user_guess = get_userguess()
+        status = check_answer(answer,user_guess)
+        if status:
+            break
     print(f"Answer is {answer}!")
 
 play_game()
