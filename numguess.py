@@ -1,36 +1,35 @@
 from random import randint
 from time import sleep
 
-# Get user's name
-username = input("What is your name? > ")
+# get username and greeting
+def get_username():
+    username = input("What is your name? > ")
+    print(f"Welcome, {username}!")
+    return username
 
-# Greet user 
-print(f"Welcome, {username}!")
+# get userguess and print
+def get_userguess():
+    user_guess = int(input("What is your guess?(1~100) > "))
+    print(f"Your guess is {user_guess}, right?")
+    return user_guess
 
-# Generate random answer
-answer = randint(1,100)
-print(answer)
+# check user_guess with answer
+def check_answer(answer, user_guess):
+    if answer == user_guess:
+        print('******************************')
+        print('Congratulation !! Correct !!')
+        print('******************************')
+        return
+    elif user_guess > answer:
+        print("Sorry, you are wrong... answer is lower than your guess.")
+    else:
+        print("Sorry, you are wrong... answer is higher than your guess.")
 
-# Get user's guess
-user_guess = int(input("What is your guess? > "))
+def play_game():
+    username = get_username()
+    answer = randint(1,100)
+    user_guess = get_userguess()
+    check_answer(answer,user_guess)
+    print(f"Answer is {answer}!")
 
-# Print user's guess
-print(f"Your guess is {user_guess}, right?")
-
-# Print answer number
-print(f"Answer is {answer} !")
-
-# Compare user's guess with answer
-if user_guess == answer:
-    print('*****************************')
-    sleep(1)
-    print('*****************************')
-    sleep(1)
-    print('*****************************')
-    sleep(1)
-    print("Wow, Correct!")
-elif user_guess > answer:
-    print("Sorry, You are wrong... answer is lower than your guess.")
-else:
-    print("Sorry, you are wrong... answer is higher than your guess.")
-
+play_game()
